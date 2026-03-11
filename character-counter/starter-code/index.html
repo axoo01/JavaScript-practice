@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"> 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Character Counter</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="container">
+    
+    <img 
+      id="theme-logo" src="./assets/images/logo-dark-theme.svg" 
+      alt="character counter" 
+      class="logo"
+    />
+
+   
+    <label class="theme-toggle" for="theme-toggle" aria-label="Toggle theme">
+
+      <input type="checkbox" id="theme-toggle" />
+
+      <img id="theme-icon" src="./assets/images/icon-sun.svg" alt="Switch to light mode" 
+           class="toggle-icon" />
+           
+    </label>
+  </header>
+
+  <main class="container">
+    <h1>Analyze your text<br>in real-time.</h1>
+
+    <textarea 
+      id="text-input"
+      placeholder="Start typing here… (or paste your text)"
+      aria-label="Enter text to analyze"
+    ></textarea>
+
+    <div class="options">
+
+      <div class="checkboxes">
+
+        <label>
+        <input type="checkbox" id="exclude-spaces" /> Exclude Spaces
+       </label>
+
+      <label>
+        <input type="checkbox" id="set-character-limit" /> Set Character Limit
+      </label>
+
+      <input
+        type="number"
+        id="character-limit"
+        class="limit-input"
+        min="1"
+        aria-label="Character limit"
+        placeholder="Enter limit"
+      />
+
+      </div>
+      <span class="reading-time" id="reading-time">Approx. reading time: 0 minutes</span>
+    </div>
+
+    <p class="feedback-message" id="feedback-message" aria-live="polite"></p>
+
+    <div class="stats">
+
+      <div class="card purple">
+        <div>
+          <span class="count" id="character-count">0</span>
+          <p>Total Characters</p>
+        </div>
+        <div>
+          <img src="./assets/images/pattern-character-count.svg" alt="">
+        </div>
+      </div>
+
+      <div class="card orange">
+         <div>
+          <span class="count" id="word-count">0</span>
+          <p>Word Count</p>
+         </div>
+         <div>
+          <img src="./assets/images/pattern-word-count.svg" alt="">
+         </div>
+      </div>
+
+      <div class="card yellow">
+        <div>
+          <span class="count" id="sentence-count">0</span>
+          <p>Sentence Count</p>
+        </div>
+        <div>
+          <img src="./assets/images/pattern-sentence-count.svg" alt="">
+        </div>
+      </div>
+
+    </div>
+
+    <section class="letter-density">
+  <h2>Letter Density</h2>
+  <div class="density-list" id="density-list">
+    <p class="density-empty">No characters found. Start typing to see letter density.</p>
+  </div>
+
+  <button class="see-more" id="see-more-button" type="button" hidden>
+  See more
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+</section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
